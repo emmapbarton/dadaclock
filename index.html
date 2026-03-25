@@ -198,12 +198,6 @@
             <label for="datetime">Date and time</label>
             <input id="datetime" type="datetime-local" />
           </div>
-          
-          <div class="field">
-            <label>Update</label>
-            <button class="btn" id="convertBtn" style="width:100%;">Convert</button>
-          </div>
-        </div>
         
         <div class="help">
           The input time is interpreted as local time in the selected source zone, not your computer’s zone.
@@ -242,8 +236,7 @@
     const resultsEl = document.getElementById("results");
     const errorEl = document.getElementById("error");
     const nowBtn = document.getElementById("nowBtn");
-    const convertBtn = document.getElementById("convertBtn");
-
+    
     function pad(n) {
       return String(n).padStart(2, "0");
     }
@@ -392,7 +385,6 @@
       renderResults();
     });
 
-    convertBtn.addEventListener("click", renderResults);
     sourceZoneEl.addEventListener("change", renderResults);
     datetimeEl.addEventListener("change", renderResults);
     datetimeEl.addEventListener("input", renderResults);
